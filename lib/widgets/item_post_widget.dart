@@ -23,7 +23,7 @@ class ItemPostWidget extends StatelessWidget {
     final txtUser = Text('Rubensin');
     final datePost = Text('06-03-2023');
     final imgPost = Image(image: AssetImage('assets/logo_itc.png'),height: 100,);
-    final txtDesc = Text('Aqui va el contenido del post :)');
+    final txtDesc = Text(objPostModel!.dscPost!);
     final iconRate = Icon(Icons.rate_review);
 
     FlagsProvider flag = Provider.of<FlagsProvider>(context);
@@ -56,7 +56,9 @@ class ItemPostWidget extends StatelessWidget {
               iconRate,
               Expanded(child: Container()),
               IconButton(
-                onPressed: (){}, 
+                onPressed: (){
+                  Navigator.pushNamed(context, '/add', arguments: objPostModel);
+                }, 
                 icon: Icon(Icons.edit)
               ),
               IconButton(

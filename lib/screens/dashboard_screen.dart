@@ -1,6 +1,7 @@
 import 'package:day_night_switcher/day_night_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:pmsna1/provider/theme_provider.dart';
+import 'package:pmsna1/screens/list_favorites_cloud.dart';
 import 'package:pmsna1/screens/list_post.dart';
 import 'package:pmsna1/settings/styles_settings.dart';
 import 'package:provider/provider.dart';
@@ -24,7 +25,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       appBar: AppBar(
         title: Text('Social TEC :) !'),
       ),
-      body: ListPost(),
+      body: const ListFavoritesCloud(), //ListPost(),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: (){
           Navigator.pushNamed(context, '/add').then((value) {
